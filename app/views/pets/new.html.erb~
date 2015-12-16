@@ -47,7 +47,7 @@
 
   <p>
     <%= f.label :location %><br>
-    <%= f.select :location, options_for_select([["Aguascalientes", "ag"], ["Baja California", "bc"],["Baja California Sur", "bcs"],["Campeche", "cp"],["Coahuila","ch"],["Colima", "cl"],["Chiapas", "chp"],["Chihuahua", "chi"],["Distrito Federal", "df"],["Durango", "drg"],["Guanajuato","gto"],["Guerrero","gro"],["Hidalgo","hgo"],["Jalisco","jls"],["México", "mex"],["Michoacan", "mhc"],["Morelos","mls"],["Nayarit", "nyt"],["Nuevo León","nl"],["Oaxaca","oax"],["Puebla","pl"],["Querétaro","qt"],["Quintana Roo","qr"],["San Luis Potosí","sp"],["Sinaloa","sl"],["Sonora","sr"],["Tabasco","tc"],["Tamaulipas","ts"],["Tlaxcala","tl"],["Veracruz","vz"],["Yucatán","yn"],["Zacatecas","zs"]]) %>
+    <%= f.select :location, options_for_select([["Aguascalientes", "ag"], ["Baja California", "bc"],["Baja California Sur", "bcs"],["Campeche", "cp"],["Coahuila","ch"],["Colima", "cl"],["Chiapas", "chp"],["Chihuahua", "chi"],["Distrito Federal", "df"],["Durango", "drg"],["Guanajuato","gto"],["Guerrero","gro"],["Hidalgo","hgo"],["Jalisco","jls"],["México", "mex"],["Michoacan", "mhc"],["Morelos","mls"],["Nayarit", "nyt"],["Monterrey","mty"],["Oaxaca","oax"],["Puebla","pl"],["Querétaro","qt"],["Quintana Roo","qr"],["San Luis Potosí","sp"],["Sinaloa","sl"],["Sonora","sr"],["Tabasco","tc"],["Tamaulipas","ts"],["Tlaxcala","tl"],["Veracruz","vz"],["Yucatán","yn"],["Zacatecas","zs"]]) %>
   </p>
 
   <p>
