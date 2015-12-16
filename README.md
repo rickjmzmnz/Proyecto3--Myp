@@ -7,4 +7,4 @@ Consta de una aplicación web.
 Cuyos objetivos principales son:
 *Dar en adopción una mascota.
 *Adoptar una mascota.
-
+*Esta aplicación va dirigida a personas con empatia por los animales.
