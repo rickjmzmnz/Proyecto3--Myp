@@ -1,4 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :twitter, Rails.application.secrets.twitter_api_key, Rails.application.secrets.twitter_api_secret
   provider :facebook, Rails.application.secrets.facebook_api_key, Rails.application.secrets.facebook_api_secret
+
+  OmniAuth.config.on_failure = -> (env) do
+    Rack::Response.new(['302 Moved'], 302, 'Location' => env['omniauth.origin'] || "/").finish
+  end
 end

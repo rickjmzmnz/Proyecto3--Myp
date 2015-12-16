@@ -7,3 +7,35 @@
   <strong>Name:</strong>
   <%= @pet.name %>
 </p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @pet.age %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pet.description %>
+</p>
+
+
+<p>
+  <strong>Vaccinated:</strong>
+  <%= @pet.vaccinated %>
+</p>
+
+<p>
+  <strong>Sterilized:</strong>
+  <%= @pet.sterilized %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @pet.location %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+
+<%= link_to 'Regresa a la lista', pets_path %>
