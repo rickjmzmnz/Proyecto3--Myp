@@ -1,0 +1,17 @@
+<%= link_to 'Subir animal',  new_pet_path%>
+
+<header>
+  <h1>
+  Animales disponibles
+</h1>
+</header>
+
+<% @pets.each do |pet|%>
+	<h1><%= pet.name%></h1>
+		<div>
+			<%= pet.kind%>
+		</div>
+    <div class="">
+      <%= pet.description%>
+    </div>
+<%end%>
