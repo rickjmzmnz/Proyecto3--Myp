@@ -7,9 +7,9 @@ Consta de una aplicación web.
 Cuyos objetivos principales son:
 *Dar en adopción una mascota.
 *Adoptar una mascota.
-<<<<<<< HEAD
+*Cuidar el bienestar de los animales sin hogar
 *Esta aplicación va dirigida a personas con empatia por los animales.
 =======
 
 *Esta aplicación va dirigída a las personas que sienten empatía con los animales
->>>>>>> f21d10d6243fcb968efd0dbff440e62da7413cee
+
