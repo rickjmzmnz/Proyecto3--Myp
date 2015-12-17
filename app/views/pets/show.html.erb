@@ -36,17 +36,20 @@
 
 <%unless @pet.user.nil?%>
   <%if @pet.user.provider == 'twitter'%>
-      publicado por Twitter.com/<%=@pet.user.nickname%><br>
+      publicado por Twitter.com/<%=@pet.user.nickname%>
   <% else %>
     publicado por <%=@pet.user.email%><br>
   <% end %>
-
+<br>
 <%end%>
 
 <% unless @pet.user.nil?%>
   <% if @pet.user == current_user %>
     <div><%= link_to 'Edit', edit_pet_path(@pet) %></div>
+    <br>
+    <div><%= button_to "Eliminar", @pet, {:onclick => "return confirm('Are you sure?')", :method => :delete}%></div>
   <% end %>
+  <br>
 <% end %>
 
 <%= link_to 'Regresa a la lista', pets_path %>

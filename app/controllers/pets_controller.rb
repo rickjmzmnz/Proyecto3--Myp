@@ -17,6 +17,15 @@ class PetsController < ApplicationController
     end
   end
 
+  def destroy
+    @pet = Pet.find(params[:id])
+    if @pet.destroy!
+      redirect_to pets_path, :notice => "Successfully deleted a pet."
+    else
+      redirect_to pets_path, :notice => "Failed to delete a pet."
+    end
+  end
+
   def update
     @pet = Pet.find(params[:id])
 
