@@ -5,6 +5,10 @@ class Pet < ActiveRecord::Base
   validates :description, presence: true, length: {minimum: 15}
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
-  end  
+    if search
+      find(:all, :conditions => ["name LIKE ?", "%#{search}%"])
+    else
+      @pets = Pet.all
+    end
+  end
 end

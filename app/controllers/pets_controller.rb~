@@ -1,11 +1,6 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
-     if params[:search]
-       @pets =Pet.search(params[:search]).order("created_at DESC")
-     else
-       @pets = Pet.all.order('created_at DESC')
-     end
+    @pets = Pet.search(params[:search])
   end
 
   def new
