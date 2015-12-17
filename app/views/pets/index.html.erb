@@ -21,6 +21,7 @@
 	<h1><%= link_to pet.name, pet_path(pet)%></h1>
 		<div><%= pet.kind%></div>
     <div><%= pet.description%></div>
+    <div><%= pet.location%></div>
 <%end%>
 <br>
 <%= link_to 'Regresar al inicio', root_path %>

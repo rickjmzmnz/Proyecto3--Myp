@@ -6,5 +6,7 @@ class Pet < ActiveRecord::Base
 
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
+    where("kind LIKE ?", "%#{search}%")
+    where("location LIKE ?", "%#{search}%")
   end  
 end
