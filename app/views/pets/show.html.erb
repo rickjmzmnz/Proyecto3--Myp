@@ -34,8 +34,19 @@
   <%= @pet.location %>
 </p>
 
+<%unless @pet.user.nil?%>
+  <%if @pet.user.provider == 'twitter'%>
+      publicado por Twitter.com/<%=@pet.user.nickname%><br>
+  <% else %>
+    publicado por <%=@pet.user.email%><br>
+  <% end %>
 
+<%end%>
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<% unless @pet.user.nil?%>
+  <% if @pet.user == current_user %>
+    <div><%= link_to 'Edit', edit_pet_path(@pet) %></div>
+  <% end %>
+<% end %>
 
 <%= link_to 'Regresa a la lista', pets_path %>

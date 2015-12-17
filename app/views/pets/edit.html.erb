@@ -38,17 +38,17 @@
 
   <p>
     <%= f.label :vaccinated %><br>
-    <%= f.select :vaccinated, options_for_select([["Si", "si"], ["No", "no"], ["Se desconoce", "desconocido"]]) %>
+    <%= f.select :vaccinated, options_for_select([["Si", "si"], ["No", "no"], ["Se desconoce", "desconocido"]],selected: f.object.vaccinated) %>
   </p>
 
   <p>
     <%= f.label :sterilized %><br>
-    <%= f.select :sterilized, options_for_select([["Si", "si"], ["No", "no"], ["Se desconoce", "desconocido"]]) %>
+    <%= f.select :sterilized, options_for_select([["Si", "si"], ["No", "no"], ["Se desconoce", "desconocido"]], selected: f.object.sterilized) %>
   </p>
 
   <p>
     <%= f.label :location %><br>
-    <%= f.select :location, options_for_select([["Aguascalientes", "ag"], ["Baja California", "bc"], ["D.F", "df"]]) %>
+    <%= f.select :location, options_for_select([["Aguascalientes", "ag"], ["Baja California", "bc"],["Baja California Sur", "bcs"],["Campeche", "cp"],["Coahuila","ch"],["Colima", "cl"],["Chiapas", "chp"],["Chihuahua", "chi"],["Distrito Federal", "df"],["Durango", "drg"],["Guanajuato","gto"],["Guerrero","gro"],["Hidalgo","hgo"],["Jalisco","jls"],["México", "mex"],["Michoacan", "mhc"],["Morelos","mls"],["Nayarit", "nyt"],["Nuevo León","nl"],["Oaxaca","oax"],["Puebla","pl"],["Querétaro","qt"],["Quintana Roo","qr"],["San Luis Potosí","sp"],["Sinaloa","sl"],["Sonora","sr"],["Tabasco","tc"],["Tamaulipas","ts"],["Tlaxcala","tl"],["Veracruz","vz"],["Yucatán","yn"],["Zacatecas","zs"]], selected: f.object.location) %>
   </p>
   <p>
     <%= f.submit %>

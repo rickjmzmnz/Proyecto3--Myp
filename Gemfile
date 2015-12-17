@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Paperclip
+gem "paperclip", "~> 4.1.1"
 #Bootstrap que no me sirvio de ni mierda
 gem 'bootstrap-sass'
 #Authentiation with twitter

@@ -1,16 +1,22 @@
-<%= link_to 'Subir animal',  new_pet_path%>
+<% if current_user %>
+    <%= link_to 'Subir animal',  new_pet_path%>
+<% else %>
+
+<% end %>
+
 
 <header>
   <h1>
   Animales disponibles
 </h1>
+  Recuerda que para adoptar o subir algun animal para dar en adopcion, debes estar logueado con alguna cuenta.
 </header>
 
 <% @pets.each do |pet|%>
 	<h1><%= link_to pet.name, pet_path(pet)%></h1>
 		<div><%= pet.kind%></div>
     <div><%= pet.description%></div>
-    <div><%= link_to 'Show', pet_path(pet) %></div>
-    <div><%= link_to 'Edit', edit_pet_path(pet) %></div>
+
 <%end%>
+<br>
 <%= link_to 'Regresar al inicio', root_path %>

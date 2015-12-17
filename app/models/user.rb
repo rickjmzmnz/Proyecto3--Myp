@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :pets
+
   def self.find_or_create_from_auth_hash(auth_hash)
     #Buscar al usuario o crearlo
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
