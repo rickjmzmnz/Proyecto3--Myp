@@ -1,3 +1,4 @@
+<br>
 <% if current_user %>
     <%= link_to 'Subir animal',  new_pet_path%>
 <% else %>
@@ -9,16 +10,11 @@
   <h1>
   Animales disponibles
 </h1>
-  Recuerda que para adoptar o subir algun animal para dar en adopcion, debes estar logueado con alguna cuenta.
+  Recuerda que para adoptar o subir algun animal para dar en adopcion, debes de iniciar sesión con alguna cuenta.
 </header>
 
-<%= form_tag(pets_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Pets" %>
-    <%= submit_tag "Search"%>
-<%end%>
-
 <% @pets.each do |pet|%>
-	<h1><%= link_to pet.name, pet_path(pet)%></h1>
+	<h1><%= link_to pet.name, pet_path(pet)%></h1> <%= link_to image_tag(pet.photo.url(:small)), pet_path(pet)%>
 		<div><%= pet.kind%></div>
     <div><%= pet.description%></div>
     <div><%= pet.location%></div>

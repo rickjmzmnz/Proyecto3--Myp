@@ -1,7 +1,14 @@
 class SessionsController < ApplicationController
+  def index
+    @user = current_user
+  end
+
+  def show
+    @user = current_user
+  end
+
   def create
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    #self.current_user = @user
     session[:user_id] = @user.id
     redirect_to root_path
   end

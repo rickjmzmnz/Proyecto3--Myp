@@ -15,6 +15,9 @@
   </div>
   <% end %>
 
+    <%= f.label :photo%><br>
+    <%= f.file_field :photo %>
+
   <p>
     <%= f.label :kind %><br>
     <%= f.text_field :kind %>
@@ -52,7 +55,7 @@
                                                 ["Baja California Sur", "Baja California Sur"],
                                                 ["Campeche", "Campeche"],["Coahuila","Coahuila"],
                                                 ["Colima", "Colima"],["Chiapas", "Chiapas"],
-                                                ["Chihuahua", "Chihuahua"],["Distrito Federal", "Distrito Federal"],
+                                                ["Chihuahua", "Chihuahua"],["Ciudad de México", "Ciudad de México"],
                                                 ["Durango", "Durango"],["Guanajuato","Guanajuato"],
                                                 ["Guerrero","Guerrero"],["Hidalgo","Hidalgo"],
                                                 ["Jalisco","Jalisco"],["Estado de México", "Estado de México"],
@@ -66,6 +69,8 @@
   </p>
 
   <p>
+    Al darle click al siguiente botón, estarás aceptando dar tu correo o usuario de Twitter para
+    que te contacten y puedan adoptar al animal.<br>
     <%= f.submit %>
   </p>
   <%= link_to 'Regresar', pets_path %>

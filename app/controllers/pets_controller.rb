@@ -2,9 +2,9 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all
      if params[:search]
-       @pets =Pet.search(params[:search]).order("created_at DESC")
+       @pets =Pet.search(params[:search]).order("lower(name) ASC")
      else
-       @pets = Pet.all.order('created_at DESC')
+       @pets = Pet.order('lower(name) ASC').all
      end
   end
 
@@ -52,6 +52,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:kind, :name, :age, :description, :vaccinated, :sterilized, :location)
+    params.require(:pet).permit(:kind, :name, :age, :description, :vaccinated, :sterilized, :location, :photo)
   end
 end

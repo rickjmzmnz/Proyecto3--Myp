@@ -1,3 +1,6 @@
+<br>
+<%= image_tag @pet.photo.url(:small) %>
+
 <p>
   <strong>Kind:</strong>
   <%= @pet.kind %>
@@ -36,20 +39,23 @@
 
 <%unless @pet.user.nil?%>
   <%if @pet.user.provider == 'twitter'%>
-      publicado por Twitter.com/<%=@pet.user.nickname%>
+      Publicado por: <%= link_to '@'+@pet.user.nickname, 'https://twitter.com/' + @pet.user.nickname%> desde Twitter<br>
+      Comunicate ahora con <%=@pet.user.nickname%> para adoptarlo (: <br>
   <% else %>
-    publicado por <%=@pet.user.email%><br>
+    Publicado por <%= "'" + @pet.user.email + "'"%> desde Facebook<br>
+    Comunicate ahora con <%=@pet.user.name%> en Facebook para adoptarlo (:<br>
+    (Recuerda que puedes buscar el email desde Facebook y te saldrá el perfil de esta persona)<br>
   <% end %>
-<br>
-<%end%>
 
-<% unless @pet.user.nil?%>
+  <br>
+
   <% if @pet.user == current_user %>
     <div><%= link_to 'Edit', edit_pet_path(@pet) %></div>
     <br>
     <div><%= button_to "Eliminar", @pet, {:onclick => "return confirm('Are you sure?')", :method => :delete}%></div>
+    <br>
   <% end %>
-  <br>
-<% end %>
+<%end%>
+
 
 <%= link_to 'Regresa a la lista', pets_path %>

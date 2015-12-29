@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 #Paperclip
-gem "paperclip", "~> 4.1.1"
-#Bootstrap que no me sirvio de ni mierda
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
+#Bootstrap sass
 gem 'bootstrap-sass'
 #Authentiation with twitter
 gem 'omniauth-twitter'

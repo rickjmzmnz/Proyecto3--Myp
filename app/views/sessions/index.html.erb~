@@ -1,0 +1,37 @@
+
+<% if current_user %>
+  <p>
+  Mi cuenta:
+  <% if @user.provider == 'twitter' %>
+    @<%= @user.nickname%>
+  <% else %>
+    <%= @user.name%>
+  <% end %>
+  </p>
+
+  <br>
+
+  <p>
+    Logueado con: <%= @user.provider%>
+  </p>
+
+  <br>
+
+  <p>
+  Animales subidos por ti: <br>
+  (Recuerda, si algun animal que hayas subido ya fue adoptado, dalo de baja, no queremos que otras personas sigan creyendo
+  que sigue en adopción)
+  <% @user.pets.each do |pet|%>
+  <div>
+    <%= link_to pet.name, pet_path(pet)%>
+  </div>
+  <br>
+  <% end %>
+
+
+  </p>
+<% else %>
+  redirect_to root_path
+<% end %>
+<br>
+<%= link_to 'Regresar al inicio', root_path %>
