@@ -1,0 +1,33 @@
+
+<% if current_user %>
+  <p>
+  Mi cuenta:
+  <% if @user.provider == 'twitter' %>
+    @<%= @user.nickname%>
+  <% else %>
+    <%= @user.name%>
+  <% end %>
+  </p>
+
+  <br>
+
+  <p>
+    Logueado con: <%= @user.provider%>
+  </p>
+
+  <br>
+
+  <p>
+  Animales subidos por ti:
+  <% @user.pets.each do |pet|%>
+  <div>
+    <%= link_to pet.name, pet_path(pet)%>
+  </div>
+  <br>
+  <% end %>
+
+
+  </p>
+<% else %>
+  redirect_to root_path
+<% end %>

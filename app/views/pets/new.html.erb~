@@ -15,6 +15,9 @@
   </div>
   <% end %>
 
+    <%= f.label :photo%><br>
+    <%= f.file_field :photo %>
+
   <p>
     <%= f.label :kind %><br>
     <%= f.text_field :kind %>
@@ -47,10 +50,27 @@
 
   <p>
     <%= f.label :location %><br>
-    <%= f.select :location, options_for_select([["Aguascalientes", "ag"], ["Baja California", "bc"],["Baja California Sur", "bcs"],["Campeche", "cp"],["Coahuila","ch"],["Colima", "cl"],["Chiapas", "chp"],["Chihuahua", "chi"],["Distrito Federal", "df"],["Durango", "drg"],["Guanajuato","gto"],["Guerrero","gro"],["Hidalgo","hgo"],["Jalisco","jls"],["México", "mex"],["Michoacan", "mhc"],["Morelos","mls"],["Nayarit", "nyt"],["Monterrey","mty"],["Oaxaca","oax"],["Puebla","pl"],["Querétaro","qt"],["Quintana Roo","qr"],["San Luis Potosí","sp"],["Sinaloa","sl"],["Sonora","sr"],["Tabasco","tc"],["Tamaulipas","ts"],["Tlaxcala","tl"],["Veracruz","vz"],["Yucatán","yn"],["Zacatecas","zs"]]) %>
+    <%= f.select :location, options_for_select([["Aguascalientes", "Aguascalientes"],
+                                                ["Baja California", "Baja California"],
+                                                ["Baja California Sur", "Baja California Sur"],
+                                                ["Campeche", "Campeche"],["Coahuila","Coahuila"],
+                                                ["Colima", "Colima"],["Chiapas", "Chiapas"],
+                                                ["Chihuahua", "Chihuahua"],["Ciudad de México", "Ciudad de México"],
+                                                ["Durango", "Durango"],["Guanajuato","Guanajuato"],
+                                                ["Guerrero","Guerrero"],["Hidalgo","Hidalgo"],
+                                                ["Jalisco","Jalisco"],["Estado de México", "Estado de México"],
+                                                ["Michoacan", "Michoacan"],["Morelos","Morelos"],["Nayarit", "Nayarit"],
+                                                ["Nuevo León","Nuevo León"],["Oaxaca","Oaxaca"],["Puebla","Puebla"],
+                                                ["Querétaro","Querétaro"],["Quintana Roo","Quintana Roo"],
+                                                ["San Luis Potosí","San Luis Potosí"],["Sinaloa","Sinaloa"],
+                                                ["Sonora","Sonora"],["Tabasco","Tabasco"],["Tamaulipas","Tamaulipas"],
+                                                ["Tlaxcala","Tlaxcala"],["Veracruz","Veracruz"],["Yucatán","Yucatán"],
+                                                ["Zacatecas","Zacatecas"]])%>
   </p>
 
   <p>
+    Al darle click al siguiente botón, estarás aceptando dar tu correo o usuario de Twitter para
+    que te contacten y puedan adoptar al animal.<br>
     <%= f.submit %>
   </p>
   <%= link_to 'Regresar', pets_path %>

@@ -1,4 +1,3 @@
-<br>
 <% if current_user %>
     <%= link_to 'Subir animal',  new_pet_path%>
 <% else %>
