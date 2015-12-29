@@ -2,8 +2,12 @@
 <html>
   <head>
   <style>
-  l {
-    display: inline;
+  .be-blue {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
   }
 
   body {
@@ -45,6 +49,7 @@
     </div>
   </nav>
 
+  <br>
   <%= form_tag(pets_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Pets" %>
       <%= submit_tag "Search"%>

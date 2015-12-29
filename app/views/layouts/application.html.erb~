@@ -2,8 +2,12 @@
 <html>
   <head>
   <style>
-  l {
-    display: inline;
+  .be-blue {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
   }
 
   body {
@@ -26,12 +30,12 @@
       <div class="">
         <%= %>
         <%= link_to image_tag("logo.png"), root_path, class: 'navbar-brand' %>
-        <l><%= link_to "Animales", pets_path, class: 'navbar-brand' %><l>
+        <%= link_to "Animales", pets_path, class: 'navbar-brand' %>
       </div>
       <div id="navbar">
         <ul class="be-blue">
           <% if current_user%>
-          <l><%= link_to 'Mi cuenta', sessions_path(@user), class: 'navbar-brand' %><l>
+          <%= link_to 'Mi cuenta', sessions_path(@user), class: 'navbar-brand' %>
           <ul class="nav navbar-nav pull-right">
           <li>Sesion iniciada como: <%=image_tag current_user.profile_image, alt: current_user.name%> <%= current_user.name%></li>
           <li><%= link_to 'Cerrar sesión', logout_path, method: :delete %></li>
@@ -45,6 +49,7 @@
     </div>
   </nav>
 
+  <br>
   <%= form_tag(pets_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Pets" %>
       <%= submit_tag "Search"%>
